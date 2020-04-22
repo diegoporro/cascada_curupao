@@ -25,7 +25,7 @@ SECRET_KEY = 'tt+ztc**rj5es$zxsct!7^un=ixt*f6-*rgh5@)-^+%y)^dbm+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cascadadecurupao.herokuapp.com']
 
 
 # Application definition
