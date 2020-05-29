@@ -16,16 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from web import views
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', views.home, name='home'),
+    path('', views.home, name='home'),
 ]
 
-admin.site.site_url = '/home/'
+admin.site.site_url = '/'
 admin.site.site_header = 'CEI Cascada de Curupao'
 admin.site.site_title = 'Admin | CEI Cascada de Curupao'
 admin.site.index_title = 'Panel Administrativo'
 
 urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
